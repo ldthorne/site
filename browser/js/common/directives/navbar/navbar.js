@@ -1,18 +1,12 @@
-app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) {
+'use strict';
 
+app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) {
     return {
         restrict: 'E',
         scope: {},
         templateUrl: 'js/common/directives/navbar/navbar.html',
         link: function (scope) {
-
-            scope.items = [
-                { label: 'Home', state: 'home' },
-                { label: 'About', state: 'about' },
-                { label: 'Documentation', state: 'docs' },
-                { label: 'Members Only', state: 'membersOnly', auth: true }
-            ];
-
+            
             scope.user = null;
 
             scope.isLoggedIn = function () {
@@ -20,18 +14,20 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
             };
 
             scope.logout = function () {
-                AuthService.logout().then(function () {
-                   $state.go('home');
+                AuthService.logout()
+                .then(function () {
+                    console.log(scope)
+                    $state.go('home');
                 });
             };
 
-            var setUser = function () {
+            const setUser = function () {
                 AuthService.getLoggedInUser().then(function (user) {
                     scope.user = user;
                 });
             };
 
-            var removeUser = function () {
+            const removeUser = function () {
                 scope.user = null;
             };
 
@@ -42,7 +38,5 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
             $rootScope.$on(AUTH_EVENTS.sessionTimeout, removeUser);
 
         }
-
     };
-
 });
