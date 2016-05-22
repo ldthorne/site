@@ -12,6 +12,9 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
             scope.isLoggedIn = function () {
                 return AuthService.isAuthenticated();
             };
+            scope.addProject = () => {
+                $state.go('addProject', {userId : scope.user._id});
+            };
 
             scope.logout = function () {
                 AuthService.logout()
@@ -22,8 +25,12 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
             };
 
             const setUser = function () {
-                AuthService.getLoggedInUser().then(function (user) {
+                AuthService.getLoggedInUser()
+                .then( user => {
                     scope.user = user;
+                    if(user){
+                        scope.isUserAdmin = user.isAdmin;
+                    }
                 });
             };
 

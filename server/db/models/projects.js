@@ -7,7 +7,8 @@ const projectSchema = new mongoose.Schema({
 	longDescription: { type: String, required: true },
 	githubLink: { type: String },
 	deployedLink: { type: String },
-	date: { type: Date, default: Date.now }
+	startDate: { type: Date, default: Date.now },
+	endDate: { type: Date }
 });
 
 mongoose.model('Project', projectSchema);

@@ -6,7 +6,10 @@ app.config(function ($stateProvider) {
         resolve: {
         	projects: (ProjectFactory) => {
         		return ProjectFactory.fetchAllProjects();
-        	}
+        	},
+            user: (AuthService) => {
+                return AuthService.getLoggedInUser();
+            }
         }
     });
 });

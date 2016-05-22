@@ -3,39 +3,24 @@
 app.factory('ProjectFactory', function($http) {
 	return {
 		fetchAllProjects: () => {
-			$http.get('/api/projects')
-			.then( res => {
-				return res.data;
-			})
-			.catch( console.error.bind(console) );
+			return $http.get('/api/projects')
+			.then( res => res.data );
 		},
 		fetchOneProject: (projectId) => {
-			$http.get(`/api/projects/${projectId}`)
-			.then( res => {
-				return res.data;
-			})
-			.catch( console.error.bind(console) );
+			return $http.get(`/api/projects/${projectId}`)
+			.then( res => res.data );
 		},
 		createAProject: (projectData) => {
-			$http.post('/api/projects', projectData)
-			.then( res => {
-				return res.data;
-			})
-			.catch( console.error.bind(console) );
+			return $http.post('/api/projects', projectData)
+			.then( res => res.data );
 		},
 		updateAProject: (projectData) => {
-			$http.put('/api/projects', projectData)
-			.then( res => {
-				return res.data;
-			})
-			.catch( console.error.bind(console) );
+			return $http.put('/api/projects', projectData)
+			.then( res => res.data );
 		},
 		deleteAProject: (projectId) => {
-			$http.delete(`/api/projects/${projectId}`)
-			.then(res => {
-				return res.data;
-			})
-			.catch( console.error.bind(console) );
+			return $http.delete(`/api/projects/${projectId}`)
+			.then( res => res.data );
 		}
 	}
 });
