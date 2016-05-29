@@ -4,6 +4,7 @@
 
 body {
   background: #EAEAEA;
+  overflow: auto;
 }
 
 @mixin clearfix {
@@ -15,9 +16,8 @@ body {
 }
 
 #main {
-  padding-top: 60px;
+  padding-top: 20px;
   margin: 0 auto;
-  overflow: auto;
 }
 
 @import 'directives/main';
