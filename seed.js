@@ -17,23 +17,24 @@ name in the environment files.
 
 */
 
-var mongoose = require('mongoose');
-var Promise = require('bluebird');
-var chalk = require('chalk');
-var connectToDb = require('./server/db');
-var User = Promise.promisifyAll(mongoose.model('User'));
+const mongoose = require('mongoose');
+const Bluebird = require('bluebird');
+const chalk = require('chalk');
+const connectToDb = require('./server/db');
+const User = Bluebird.promisifyAll(mongoose.model('User'));
+const Project = Bluebird.promisifyAll(mongoose.model('Project'));
 
-var seedUsers = function () {
+const seedUsers = function () {
 
-    var users = [
+    const users = [
         {
-            email: 'testing@fsa.com',
-            password: 'password'
+            email: 'ldthorne@brandeis.edu',
+            password: 'password',
+            isAdmin: true
         },
         {
             email: 'obama@gmail.com',
-            password: 'potus',
-            isAdmin: true
+            password: 'potus'
         }
     ];
 
@@ -46,8 +47,13 @@ connectToDb.then(function () {
         if (users.length === 0) {
             return seedUsers();
         } else {
-            console.log(chalk.magenta('Seems to already be user data, exiting!'));
-            process.kill(0);
+            console.log('inside!')
+            console.log(chalk.magenta('Seems to already be user data, removing!!'));
+            return Bluebird.all([User.remove({}), Project.remove({})])
+            .then( () => {
+                console.log(chalk.green('Seed successful!'));
+                return seedUsers();
+            })
         }
     }).then(function () {
         console.log(chalk.green('Seed successful!'));

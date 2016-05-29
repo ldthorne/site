@@ -1,0 +1,27 @@
+#projects {
+	.card-container {
+		height: 170px;
+	}
+}
+
+
+.delete-icon {
+    color: #9f9f9f;
+    float: right;
+    width:24px;
+    justify-content: right;
+}
+
+.title-holder {
+    display: flex;
+}
+
+.dates {
+    text-align: right;
+    color: #9f9f9f;
+}
+
+.short {
+    padding-top: 0px;
+    font-size: 16px;
+}

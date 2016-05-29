@@ -1,0 +1,24 @@
+<div class="card-container">
+    <md-card>
+        <md-card-title>
+            <md-card-title-text class="project-card-content">
+                <div class="title-holder" layout="row" layout-align="end center">
+                    <div class="title ">
+                        <span class="md-headline"> {{ project.title }}</span>
+                    </div>
+                    <div class="delete-icon">
+                        <i class="material-icons" layout-align="right" ng-show="isUserAdmin" ng-click="remove(project)">delete</i>
+                    </div>
+                </div>
+                <div>
+                    <span class="md-subhead text-center" class="short" ng-show="project.shortDescription"><i>{{ project.shortDescription }}</i></span>
+                    <span> {{ project.longDescription }}</span>
+                </div>
+                <span ng-show="project.githubLink"><a href="{{project.githubLink}}">Github Repository</a></span>
+                <span ng-show="project.deployedLink"><a href="{{project.deployedLink}}">Deployed Site</a></span>
+                <span class="dates" ng-show="!project.endDate">{{ project.startDate | date:'M/dd/yyyy' }}</span>
+                <span class="dates" ng-show="project.endDate">{{ project.startDate | date:'M/dd/yyyy' }} through {{ project.endDate | date:'M/dd/yyyy' }}</span>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+</div>
