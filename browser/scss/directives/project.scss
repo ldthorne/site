@@ -1,19 +1,20 @@
 #projects {
-	.card-container {
-		height: 170px;
-	}
+    .card-container {
+        height: 170px;
+    }
 }
-
 
 .delete-icon {
     color: #9f9f9f;
     float: right;
-    width:24px;
-    justify-content: right;
+    
+}
+.material-icons {
+	vertical-align: middle;
 }
 
-.title-holder {
-    display: flex;
+.title {
+	text-align: center;
 }
 
 .dates {
