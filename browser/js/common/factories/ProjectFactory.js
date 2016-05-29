@@ -22,5 +22,5 @@ app.factory('ProjectFactory', function($http) {
 			return $http.delete(`/api/projects/${projectId}`)
 			.then( res => res.data );
 		}
-	}
+	};
 });
