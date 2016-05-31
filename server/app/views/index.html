@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <base href="/" />
+    <meta property="og:title" content="Leon Daniel Thorne"/>
+    <meta property="og:url" content="http://www.ldthorne.me/" />
+    <meta property="og:image" content="http://ldthorne.me/me.jpg" />
+    <meta property="og:description" content="Leon Thorne's personal site." />
     <title>Leon Daniel Thorne</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css" />
@@ -17,11 +22,14 @@
     <script src="/angular-material/angular-material.min.js"></script>
     <script src="/angular-ui-bootstrap/ui-bootstrap.js"></script>
     <script src="/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/pdfobject/pdfobject.min.js"></script>
     <script src="/socket.io-client/socket.io.js"></script>
     <script src="/main.js"></script>
-</head>
-<body ng-app="ThorneSite">
+  </head>
+
+  <body ng-app="ThorneSite">
     <navbar></navbar>
     <div id="main" ui-view></div>
-</body>
+  </body>
+
 </html>

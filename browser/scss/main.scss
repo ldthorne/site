@@ -4,7 +4,7 @@
 
 body {
   background: #EAEAEA;
-  overflow: auto;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
 }
 
 @mixin clearfix {
@@ -18,8 +18,12 @@ body {
 #main {
   padding-top: 20px;
   margin: 0 auto;
+  // background-color: #EAEAEA;
+  overflow: visible;
+
 }
 
 @import 'directives/main';
 @import 'home/main';
+@import 'resume/main';
 @import 'login/main';
