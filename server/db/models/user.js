@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const _ = require('lodash');
 
 const schema = new mongoose.Schema({
-  email: { type: String },
+  email: { type: String, unique: true },
   password: { type: String },
   salt: { type: String },
   isAdmin: { type: Boolean, default: false }
