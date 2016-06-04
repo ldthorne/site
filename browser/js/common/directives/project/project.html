@@ -2,7 +2,11 @@
   <md-card>
     <md-card-title>
       <md-card-title-text class="project-card-content">
-        <p class="md-headline title"> {{ project.title }}
+        <p class="md-headline title"> 
+          <span class="edit-icon">
+            <i class="material-icons" ng-show="isUserAdmin" ng-click="edit(project)">mode_edit</i>
+          </span>
+          {{ project.title }}
           <span class="delete-icon">
             <i class="material-icons" ng-show="isUserAdmin" ng-click="remove(project)">delete</i>
           </span>

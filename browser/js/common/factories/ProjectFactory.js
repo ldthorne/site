@@ -18,8 +18,14 @@ app.factory('ProjectFactory', function ($http) {
       return $http.put('/api/projects', projectData)
       .then(res => res.data);
     },
-    deleteAProject: (projectId) => {
-      return $http.delete(`/api/projects/${projectId}`)
+    deleteAProject: (projectData) => {
+      //angular's $http delete request doesn't allow for a body to be sent unless configured as such 
+      return $http({
+        method: 'DELETE',
+        url: '/api/projects/',
+        data: projectData,
+        headers: {'Content-Type': 'application/json;charset=utf-8'}
+      })
       .then(res => res.data);
     }
   };
