@@ -9,8 +9,7 @@ app.controller('SignupCtrl', function ($scope, AuthService, $state, UserFactory)
     $scope.error = null;
     UserFactory.createUser(account)
     .then( createdUser => {
-      console.log(createdUser)
-      return AuthService.login(account)
+      return AuthService.login(account);
     })
     .then( () => {
         $state.go('home');

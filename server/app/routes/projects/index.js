@@ -51,7 +51,6 @@ router.post('/', (req, res, next) => {
 });
 
 router.delete('/', (req, res, next) => {
-  console.log(req.body)
   User.findById(req.body.userId)
   .then( user => {
     if(!user.isAdmin) {

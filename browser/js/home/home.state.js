@@ -1,3 +1,5 @@
+'use strict';
+
 app.config(function ($stateProvider) {
   $stateProvider.state('home', {
     url: '/',
@@ -9,6 +11,12 @@ app.config(function ($stateProvider) {
       },
       user: (AuthService) => {
         return AuthService.getLoggedInUser();
+      },
+      numUsers: (UserFactory) => {
+        return UserFactory.getUserCount();
+      },
+      creatorContent: (UserFactory) => {
+        return UserFactory.getCreator();
       }
     }
   });

@@ -7,7 +7,12 @@ const schema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: { type: String },
   salt: { type: String },
-  isAdmin: { type: Boolean, default: false }
+  isAdmin: { type: Boolean, default: false },
+  biography: { type: String, required: true },
+  picture: { type: String, default: 'http://www.fillmurray.com/400/400' },
+  resume: { type: String },
+  github: { type: String },
+  linkedin: { type: String }
 });
 
 // method to remove sensitive information from user objects before sending them out

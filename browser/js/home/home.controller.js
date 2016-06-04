@@ -1,6 +1,13 @@
 'use strict';
 
-app.controller('HomeCtrl', function ($scope, projects, ProjectFactory, user) {
+app.controller('HomeCtrl', function ($scope, projects, ProjectFactory, user, numUsers, $state, creatorContent) {
+  if (!numUsers) {
+    const shouldInitialize = confirm('Hey, we noticed there aren\'t any users. Want to set stuff up?');
+    if (shouldInitialize) {
+      $state.go('initialize');
+    }
+  }
+  $scope.creatorContent = creatorContent;
   $scope.user = user;
   $scope.projects = projects;
 });

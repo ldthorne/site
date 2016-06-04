@@ -27,14 +27,16 @@ const moment = require('moment');
 
 const seedUsers = function () {
 
-  const users = [{
-    email: 'ldthorne@brandeis.edu',
-    password: 'password',
-    isAdmin: true
-  }, {
-    email: 'obama@gmail.com',
-    password: 'potus'
-  }];
+  const users = [
+  // {
+  //   email: 'ldthorne@brandeis.edu',
+  //   password: 'password',
+  //   isAdmin: true
+  // }, {
+  //   email: 'obama@gmail.com',
+  //   password: 'potus'
+  // }
+  ];
   return User.createAsync(users);
 };
 
