@@ -9,7 +9,14 @@ app.config(function ($urlRouterProvider, $locationProvider) {
 });
 
 // This app.run is for controlling access to specific states.
-app.run(function ($rootScope, AuthService, $state) {
+app.run(function ($rootScope, AuthService, $state, $document, UserFactory) {
+  UserFactory.getCreator()
+  .then( user => {
+    $rootScope.creatorContent = user;
+    //sets the title of the webpage
+    $document[0].title = $rootScope.creatorContent.siteTitle || 'Set the title in settings!';
+  })
+
   // The given state requires an authenticated user.
   const destinationStateRequiresAuth = function (state) {
     return state.data && state.data.authenticate;

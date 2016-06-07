@@ -14,9 +14,6 @@ app.config(function ($stateProvider) {
       },
       numUsers: (UserFactory) => {
         return UserFactory.getUserCount();
-      },
-      creatorContent: (UserFactory) => {
-        return UserFactory.getCreator();
       }
     }
   });

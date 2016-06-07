@@ -1,3 +1,4 @@
+<title>{{ siteTitle }}</title>
 <div id="home-content">
   <md-card>
     <md-card-title id="card-title" layout="row" layout-xs="column" layout-align="center center">
@@ -12,6 +13,24 @@
       <md-button ng-show="creatorContent.resume" ui-sref="resume">Resume</md-button>
       <md-button class="icon-button" md-ink-ripple="#1d6cf2" aria-label="Email" ng-href="mailto:{{creatorContent.email}}">
         <md-icon md-svg-src="http://ldthorne.s3.amazonaws.com/email.svg"></md-icon>
+      </md-button>
+      <md-button class="icon-button" md-ink-ripple="#1d6cf2" aria-label="Pinterest" ng-show="creatorContent.pinterest" ng-href="{{ creatorContent.pinterest }}">
+        <md-icon md-svg-src="http://ldthorne.s3.amazonaws.com/pinterest.svg"></md-icon>
+      </md-button>
+      <md-button class="icon-button" md-ink-ripple="#1d6cf2" aria-label="Tumblr" ng-show="creatorContent.tumblr" ng-href="{{ creatorContent.tumblr }}">
+        <md-icon md-svg-src="http://ldthorne.s3.amazonaws.com/tumblr.svg"></md-icon>
+      </md-button>
+      <md-button class="icon-button" md-ink-ripple="#1d6cf2" aria-label="Instagram" ng-show="creatorContent.instagram" ng-href="{{ creatorContent.instagram }}">
+        <md-icon md-svg-src="http://ldthorne.s3.amazonaws.com/instagram.svg"></md-icon>
+      </md-button>
+      <md-button class="icon-button" md-ink-ripple="#1d6cf2" aria-label="Google Plus" ng-show="creatorContent.googlePlus" ng-href="{{ creatorContent.googlePlus }}">
+        <md-icon md-svg-src="http://ldthorne.s3.amazonaws.com/google-plus.svg"></md-icon>
+      </md-button>
+      <md-button class="icon-button" md-ink-ripple="#1d6cf2" aria-label="Facebook" ng-show="creatorContent.facebook" ng-href="{{ creatorContent.facebook }}">
+        <md-icon md-svg-src="http://ldthorne.s3.amazonaws.com/facebook.svg"></md-icon>
+      </md-button>
+      <md-button class="icon-button" md-ink-ripple="#1d6cf2" aria-label="Twitter" ng-show="creatorContent.twitter" ng-href="{{ creatorContent.twitter }}">
+        <md-icon md-svg-src="http://ldthorne.s3.amazonaws.com/twitter.svg"></md-icon>
       </md-button>
       <md-button class="icon-button" md-ink-ripple="#1d6cf2" aria-label="GitHub" ng-show="creatorContent.github" ng-href="{{ creatorContent.github }}">
         <md-icon md-svg-src="http://ldthorne.s3.amazonaws.com/github.svg"></md-icon>

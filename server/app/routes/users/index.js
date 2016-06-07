@@ -14,7 +14,7 @@ router.get('/admin', (req, res, next) => {
     if(admin){
       admin.password = null;
       admin.salt = null;
-      res.json(admin)
+      res.json(admin);
     } else {
       res.json([]);
     }
@@ -36,13 +36,13 @@ router.put('/', (req, res, next) => {
   })
   .then(savedUser => res.json(savedUser))
   .catch(next);
-})
+});
 
 router.post('/', (req, res, next) => {
   User.find({email: req.body.email})
   .then( foundUser => {
   	if(foundUser.length){
-  		throw new Error('That email is already registered!')
+  		throw new Error('That email is already registered!');
   	} else {
   		return User.create(req.body);
   	}
