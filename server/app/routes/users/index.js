@@ -29,7 +29,7 @@ router.get('/', (req, res, next) => {
 router.put('/', (req, res, next) => {
   User.findById(req.body._id)
   .then( foundUser => {
-    foundUser = _.merge(foundUser, req.body)
+    foundUser = _.merge(foundUser, req.body);
     return foundUser.save();
   })
   .then(savedUser => res.json(savedUser))
