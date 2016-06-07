@@ -6,7 +6,6 @@ app.config(function ($urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
   // If we go to a URL that ui-router doesn't have registered, go to the "/" url.
   $urlRouterProvider.otherwise('/');
-
 });
 
 // This app.run is for controlling access to specific states.
@@ -14,7 +13,8 @@ app.run(function ($rootScope, AuthService, $state, $document, UserFactory) {
   UserFactory.getCreator()
   .then( user => {
     $rootScope.creatorContent = user;
-    $document[0].title = $rootScope.creatorContent.siteTitle;
+    //sets the title of the webpage
+    $document[0].title = $rootScope.creatorContent.siteTitle || 'Set the title in settings!';
   })
 
   // The given state requires an authenticated user.

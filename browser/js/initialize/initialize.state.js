@@ -5,5 +5,10 @@ app.config(function ($stateProvider) {
     url: '/initialize',
     templateUrl: 'js/initialize/initialize.template.html',
     controller: 'InitCtrl',
+    resolve: {
+    	numUsers: (UserFactory) => {
+        return UserFactory.getUserCount();
+      }
+    }
   });
 });
