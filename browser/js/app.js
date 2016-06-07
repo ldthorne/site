@@ -10,6 +10,8 @@ app.config(function ($urlRouterProvider, $locationProvider) {
 
 // This app.run is for controlling access to specific states.
 app.run(function ($rootScope, AuthService, $state, $document, UserFactory) {
+  
+  //dynamically set the favicon
   $rootScope.changeFavicon = (url) => {
     const link = document.createElement('link');
     link.type = 'image/x-icon';
