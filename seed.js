@@ -28,53 +28,50 @@ const moment = require('moment');
 const seedUsers = function () {
 
   const users = [
-  // {
-  //   email: 'ldthorne@brandeis.edu',
-  //   password: 'password',
-  //   isAdmin: true
-  // }, {
-  //   email: 'obama@gmail.com',
-  //   password: 'potus'
-  // }
+    // {
+    //   email: 'obama@gmail.com',
+    //   password: 'potus',
+    //   isAdmin: true
+    // }
   ];
   return User.createAsync(users);
 };
 
 const seedProjects = function () {
   const projects = [
-  // {
-  //     title: 'This is the first project',
-  //     shortDescription: 'This is the short description for the first project',
-  //     longDescription: 'This is the longer description for the first project!! Wow filling up so much room with this right now!',
-  //     githubLink: 'https://github.com/ldthorne/firstProject',
-  //     deployedLink: 'http://somedeployment.com',
-  //     startDate: moment().subtract({ days: 3 }),
-  //     endDate: moment()
-  //   }, {
-  //     title: 'This is the second project',
-  //     shortDescription: 'This is the short description for the second project',
-  //     longDescription: 'This is the longer description for the second project!! Wow filling up so much room with this right now!',
-  //     githubLink: 'https://github.com/ldthorne/secondProject',
-  //     deployedLink: 'http://somedeployment.com',
-  //     startDate: moment().subtract({ days: 3 }),
-  //     endDate: moment()
-  //   }, {
-  //     title: 'This is the third project',
-  //     shortDescription: 'This is the short description for the third project',
-  //     longDescription: 'This is the longer description for the third project!! Wow filling up so much room with this right now!',
-  //     githubLink: 'https://github.com/ldthorne/thirdProject',
-  //     deployedLink: 'http://somedeployment.com',
-  //     startDate: moment().subtract({ days: 3 }),
-  //     endDate: moment()
-  //   }, {
-  //     title: 'This is the fourth project',
-  //     shortDescription: 'This is the short description for the fourth project',
-  //     longDescription: 'This is the longer description for the fourth project!! Wow filling up so much room with this right now!',
-  //     githubLink: 'https://github.com/ldthorne/fourthProject',
-  //     deployedLink: 'http://somedeployment.com',
-  //     startDate: moment().subtract({ days: 3 }),
-  //     endDate: moment()
-  //   }
+    // {
+    //     title: 'This is the first project',
+    //     shortDescription: 'This is the short description for the first project',
+    //     longDescription: 'This is the longer description for the first project!! Wow filling up so much room with this right now!',
+    //     githubLink: 'https://github.com/ldthorne/firstProject',
+    //     deployedLink: 'http://somedeployment.com',
+    //     startDate: moment().subtract({ days: 3 }),
+    //     endDate: moment()
+    //   }, {
+    //     title: 'This is the second project',
+    //     shortDescription: 'This is the short description for the second project',
+    //     longDescription: 'This is the longer description for the second project!! Wow filling up so much room with this right now!',
+    //     githubLink: 'https://github.com/ldthorne/secondProject',
+    //     deployedLink: 'http://somedeployment.com',
+    //     startDate: moment().subtract({ days: 3 }),
+    //     endDate: moment()
+    //   }, {
+    //     title: 'This is the third project',
+    //     shortDescription: 'This is the short description for the third project',
+    //     longDescription: 'This is the longer description for the third project!! Wow filling up so much room with this right now!',
+    //     githubLink: 'https://github.com/ldthorne/thirdProject',
+    //     deployedLink: 'http://somedeployment.com',
+    //     startDate: moment().subtract({ days: 3 }),
+    //     endDate: moment()
+    //   }, {
+    //     title: 'This is the fourth project',
+    //     shortDescription: 'This is the short description for the fourth project',
+    //     longDescription: 'This is the longer description for the fourth project!! Wow filling up so much room with this right now!',
+    //     githubLink: 'https://github.com/ldthorne/fourthProject',
+    //     deployedLink: 'http://somedeployment.com',
+    //     startDate: moment().subtract({ days: 3 }),
+    //     endDate: moment()
+    //   }
 
   ];
   return Project.createAsync(projects);
@@ -82,31 +79,31 @@ const seedProjects = function () {
 
 connectToDb.then(function () {
   User.findAsync({})
-  .then( users => {
-    if (!users.length) {
-      return;
-    } else {
-      console.log(chalk.magenta('Seems to already be user data, removing!!'));
-      return User.remove({});
-    }
-  })
-  .then(() => seedUsers() )
-  .then(()  =>  Project.findAsync({}) )
-  .then( projects => {
-    if (!projects.length) {
-      return;
-    } else {
-      console.log(chalk.magenta('Seems to already be project data, removing!!'));
-      return Project.remove({});
-    }
-  })
-  .then(() => seedProjects() )
-  .then(() => {
-    console.log(chalk.green('Seed successful!'));
-    process.kill(0);
-  })
-  .catch( err => {
-    console.error(err);
-    process.kill(1);
-  });
+    .then(users => {
+      if (!users.length) {
+        return;
+      } else {
+        console.log(chalk.magenta('Seems to already be user data, removing!!'));
+        return User.remove({});
+      }
+    })
+    .then(() => seedUsers())
+    .then(() => Project.findAsync({}))
+    .then(projects => {
+      if (!projects.length) {
+        return;
+      } else {
+        console.log(chalk.magenta('Seems to already be project data, removing!!'));
+        return Project.remove({});
+      }
+    })
+    .then(() => seedProjects())
+    .then(() => {
+      console.log(chalk.green('Seed successful!'));
+      process.kill(0);
+    })
+    .catch(err => {
+      console.error(err);
+      process.kill(1);
+    });
 });

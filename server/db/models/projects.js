@@ -3,13 +3,13 @@
 const mongoose = require('mongoose');
 
 const ProjectSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  shortDescription: { type: String },
-  longDescription: { type: String, required: true },
-  githubLink: { type: String },
   deployedLink: { type: String },
+  endDate: { type: Date },
+  githubLink: { type: String },
+  longDescription: { type: String, required: true },
+  shortDescription: { type: String },
   startDate: { type: Date, default: Date.now },
-  endDate: { type: Date }
+  title: { type: String, required: true }
 });
 
 mongoose.model('Project', ProjectSchema);

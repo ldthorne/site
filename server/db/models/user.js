@@ -5,22 +5,22 @@ const mongoose = require('mongoose');
 const _ = require('lodash');
 
 const UserSchema = new mongoose.Schema({
-  email: { type: String, unique: true },
-  password: { type: String },
-  salt: { type: String },
-  isAdmin: { type: Boolean, default: false },
   biography: { type: String, required: true },
-  picture: { type: String, default: 'http://www.fillmurray.com/400/400' },
-  resume: { type: String },
-  github: { type: String },
-  linkedin: { type: String },
+  email: { type: String, unique: true },
   facebook: { type: String },
+  github: { type: String },
   googlePlus: { type: String },
   instagram: { type: String },
+  isAdmin: { type: Boolean, default: false },
+  linkedin: { type: String },
+  password: { type: String },
+  picture: { type: String, default: 'http://www.fillmurray.com/400/400' },
   pinterest: { type: String },
+  resume: { type: String },
+  salt: { type: String },
+  siteTitle: { type: String, required: true },
   tumblr: { type: String },
-  twitter: { type: String },
-  siteTitle: { type: String, required: true }
+  twitter: { type: String }
 });
 
 // method to remove sensitive information from user objects before sending them out

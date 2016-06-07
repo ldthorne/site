@@ -8,9 +8,11 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state, 
     link: function (scope) {
       scope.user = null;
 
-      scope.isLoggedIn = function () {
+      const isLoggedIn = function () {
         return AuthService.isAuthenticated();
       };
+      scope.isLoggedIn = isLoggedIn();
+
       scope.addProject = () => {
         $state.go('addProject', { userId: scope.user._id });
       };
