@@ -1,0 +1,103 @@
+<md-card class="form" flex-gt-sm="50" flex="80">
+  <div class='card-content'>
+    <form ng-model="user" ng-submit="submit(user)">
+      <md-content>
+        <div>
+          <md-input-container>
+            <label>Email</label>
+            <input type="email" required ng-model="user.email">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Password</label>
+            <input type="password" required ng-model="user.password">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Biography</label>
+            <textarea required ng-model="user.biography" rows="5" md-select-on-focus></textarea>
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Picture Link</label>
+            <input type="url" ng-model="user.picture">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Website Icon (Favicon)</label>
+            <input type="url" ng-model="user.favicon">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Resume Link</label>
+            <input type="url" ng-model="user.resume">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Github</label>
+            <input type="url" ng-model="user.github">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>LinkedIn</label>
+            <input type="url" ng-model="user.linkedin">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Facbook</label>
+            <input type="url" ng-model="user.facebook">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Google Plus</label>
+            <input type="url" ng-model="user.googlePlus">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Instagram</label>
+            <input type="url" ng-model="user.instagram">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Pinterest</label>
+            <input type="url" ng-model="user.pinterest">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>LinkedIn</label>
+            <input type="url" ng-model="user.tumblr">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Twitter</label>
+            <input type="url" ng-model="user.twitter">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Site Title</label>
+            <input required ng-model="user.siteTitle">
+          </md-input-container>
+        </div>
+        <div>
+          <md-button type="submit" class="md-raised md-primary">
+            {{ buttonText }}
+          </md-button>
+        </div>
+      </md-content>
+    </form>
+  </div>
+</md-card>
