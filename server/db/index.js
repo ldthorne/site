@@ -19,7 +19,7 @@ const startDbPromise = new Promise(function (resolve, reject) {
 });
 
 console.log(chalk.yellow('Opening connection to MongoDB . . .'));
-startDbPromise.then(function () {
+startDbPromise.then(() => {
   console.log(chalk.green('MongoDB connection opened!'));
 });
 

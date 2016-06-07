@@ -8,14 +8,13 @@ const startDb = require('./db');
 // Create a node server instance! cOoL!
 const server = require('http').createServer();
 
-const createApplication = function () {
+const createApplication = () => {
   const app = require('./app');
   server.on('request', app); // Attach the Express application.
   require('./io')(server); // Attach socket.io.
 };
 
-const startServer = function () {
-
+const startServer = () => {
   const PORT = process.env.PORT || 1337;
 
   server.listen(PORT, function () {
@@ -24,7 +23,10 @@ const startServer = function () {
 
 };
 
-startDb.then(createApplication).then(startServer).catch(function (err) {
+startDb
+.then(createApplication)
+.then(startServer)
+.catch((err) => {
   console.error(chalk.red(err.stack));
   process.kill(1);
 });

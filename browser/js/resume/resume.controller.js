@@ -1,9 +1,8 @@
 'use strict';
 
-app.controller('ResumeCtrl', function ($scope, creatorContent) {
+app.controller('ResumeCtrl', function ($rootScope) {
   const options = {
     height: '800px',
   };
-  $scope.creatorContent = creatorContent;
-  PDFObject.embed(creatorContent.resume, '#resumeDiv', options);
+  PDFObject.embed($rootScope.creatorContent.resume, '#resumeDiv', options);
 })

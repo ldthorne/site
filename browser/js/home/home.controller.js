@@ -7,7 +7,7 @@ app.controller('HomeCtrl', function ($scope, projects, ProjectFactory, user, num
       $state.go('initialize');
     }
   }
-  $scope.creatorContent = creatorContent;
   $scope.user = user;
   $scope.projects = projects;
+
 });

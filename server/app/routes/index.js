@@ -7,6 +7,6 @@ router.use('/users', require('./users'));
 
 // Make sure this is after all of
 // the registered routes!
-router.use(function (req, res) {
+router.use((req, res) => {
   res.status(404).end();
 });

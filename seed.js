@@ -41,39 +41,40 @@ const seedUsers = function () {
 };
 
 const seedProjects = function () {
-  const projects = [{
-      title: 'This is the first project',
-      shortDescription: 'This is the short description for the first project',
-      longDescription: 'This is the longer description for the first project!! Wow filling up so much room with this right now!',
-      githubLink: 'https://github.com/ldthorne/firstProject',
-      deployedLink: 'http://somedeployment.com',
-      startDate: moment().subtract({ days: 3 }),
-      endDate: moment()
-    }, {
-      title: 'This is the second project',
-      shortDescription: 'This is the short description for the second project',
-      longDescription: 'This is the longer description for the second project!! Wow filling up so much room with this right now!',
-      githubLink: 'https://github.com/ldthorne/secondProject',
-      deployedLink: 'http://somedeployment.com',
-      startDate: moment().subtract({ days: 3 }),
-      endDate: moment()
-    }, {
-      title: 'This is the third project',
-      shortDescription: 'This is the short description for the third project',
-      longDescription: 'This is the longer description for the third project!! Wow filling up so much room with this right now!',
-      githubLink: 'https://github.com/ldthorne/thirdProject',
-      deployedLink: 'http://somedeployment.com',
-      startDate: moment().subtract({ days: 3 }),
-      endDate: moment()
-    }, {
-      title: 'This is the fourth project',
-      shortDescription: 'This is the short description for the fourth project',
-      longDescription: 'This is the longer description for the fourth project!! Wow filling up so much room with this right now!',
-      githubLink: 'https://github.com/ldthorne/fourthProject',
-      deployedLink: 'http://somedeployment.com',
-      startDate: moment().subtract({ days: 3 }),
-      endDate: moment()
-    }
+  const projects = [
+  // {
+  //     title: 'This is the first project',
+  //     shortDescription: 'This is the short description for the first project',
+  //     longDescription: 'This is the longer description for the first project!! Wow filling up so much room with this right now!',
+  //     githubLink: 'https://github.com/ldthorne/firstProject',
+  //     deployedLink: 'http://somedeployment.com',
+  //     startDate: moment().subtract({ days: 3 }),
+  //     endDate: moment()
+  //   }, {
+  //     title: 'This is the second project',
+  //     shortDescription: 'This is the short description for the second project',
+  //     longDescription: 'This is the longer description for the second project!! Wow filling up so much room with this right now!',
+  //     githubLink: 'https://github.com/ldthorne/secondProject',
+  //     deployedLink: 'http://somedeployment.com',
+  //     startDate: moment().subtract({ days: 3 }),
+  //     endDate: moment()
+  //   }, {
+  //     title: 'This is the third project',
+  //     shortDescription: 'This is the short description for the third project',
+  //     longDescription: 'This is the longer description for the third project!! Wow filling up so much room with this right now!',
+  //     githubLink: 'https://github.com/ldthorne/thirdProject',
+  //     deployedLink: 'http://somedeployment.com',
+  //     startDate: moment().subtract({ days: 3 }),
+  //     endDate: moment()
+  //   }, {
+  //     title: 'This is the fourth project',
+  //     shortDescription: 'This is the short description for the fourth project',
+  //     longDescription: 'This is the longer description for the fourth project!! Wow filling up so much room with this right now!',
+  //     githubLink: 'https://github.com/ldthorne/fourthProject',
+  //     deployedLink: 'http://somedeployment.com',
+  //     startDate: moment().subtract({ days: 3 }),
+  //     endDate: moment()
+  //   }
 
   ];
   return Project.createAsync(projects);

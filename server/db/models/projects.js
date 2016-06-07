@@ -1,7 +1,8 @@
 'use strict';
+
 const mongoose = require('mongoose');
 
-const projectSchema = new mongoose.Schema({
+const ProjectSchema = new mongoose.Schema({
   title: { type: String, required: true },
   shortDescription: { type: String },
   longDescription: { type: String, required: true },
@@ -11,4 +12,4 @@ const projectSchema = new mongoose.Schema({
   endDate: { type: Date }
 });
 
-mongoose.model('Project', projectSchema);
+mongoose.model('Project', ProjectSchema);
