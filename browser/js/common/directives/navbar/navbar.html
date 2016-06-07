@@ -2,9 +2,9 @@
   <div class="md-toolbar-tools">
     <md-button ng-show="location !== '/'" ui-sref="home">Home</md-button>
     <span flex></span>
-    <md-button ng-show="isLoggedIn && isUserAdmin && (location !== '/addProject')" ng-click="addProject()">Add Project</md-button>
-    <md-button ng-show="!isLoggedIn" ui-sref="login">Login</md-button>
-    <md-button ng-show="isLoggedIn && (location !== '/account')" ui-sref="editAccount">Edit Your Account</md-button>
-    <md-button ng-show="isLoggedIn" ng-click="logout()">Logout</md-button>
+    <md-button ng-show="isLoggedIn() && isUserAdmin && (location !== '/addProject')" ng-click="addProject()">Add Project</md-button>
+    <md-button ng-show="!isLoggedIn()" ui-sref="login">Login</md-button>
+    <md-button ng-show="isLoggedIn() && (location !== '/account')" ui-sref="editAccount">Edit Your Account</md-button>
+    <md-button ng-show="isLoggedIn()" ng-click="logout()">Logout</md-button>
   </div>
 </md-toolbar>

@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
   biography: { type: String, required: true },
   email: { type: String, unique: true },
   facebook: { type: String },
+  favicon: { type: String },
   github: { type: String },
   googlePlus: { type: String },
   instagram: { type: String },

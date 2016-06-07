@@ -4,6 +4,9 @@ app.controller('EditAccountCtrl', function ($scope, UserFactory, user, AuthServi
   $scope.user = user;
 
   $scope.submit = user => {
+    if(user.favicon){
+      $rootScope.changeFavicon(user.favicon);
+    }
   	user.isAdmin = true;
   	UserFactory.updateUser(user)
     .then( createdUser => {

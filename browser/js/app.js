@@ -10,12 +10,24 @@ app.config(function ($urlRouterProvider, $locationProvider) {
 
 // This app.run is for controlling access to specific states.
 app.run(function ($rootScope, AuthService, $state, $document, UserFactory) {
+  $rootScope.changeFavicon = (url) => {
+    const link = document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = url;
+    document.getElementsByTagName('head')[0].appendChild(link);
+  };
+
   UserFactory.getCreator()
-  .then( user => {
+  .then(user => {
     $rootScope.creatorContent = user;
+    if(user.favicon){
+      $rootScope.changeFavicon(user.favicon);
+    }
     //sets the title of the webpage
     $document[0].title = $rootScope.creatorContent.siteTitle || 'Set the title in settings!';
-  })
+  });
+
 
   // The given state requires an authenticated user.
   const destinationStateRequiresAuth = function (state) {
