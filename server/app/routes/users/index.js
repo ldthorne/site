@@ -8,12 +8,10 @@ const _ = require('lodash');
 module.exports = router;
 
 router.get('/admin', (req, res, next) => {
-  User.find()
+  User.find().select('-password -salt')
   .then( foundUsers => {
     const admin = foundUsers.find( user => user.isAdmin);
     if(admin){
-      admin.password = null;
-      admin.salt = null;
       res.json(admin);
     } else {
       res.json([]);

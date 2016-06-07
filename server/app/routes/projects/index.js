@@ -10,18 +10,18 @@ module.exports = router;
 
 router.get('/', (req, res, next) => {
   Project.find()
-    .then(projects => {
-      res.json(projects);
-    })
-    .catch(next);
+  .then(projects => {
+    res.json(projects);
+  })
+  .catch(next);
 });
 
 router.get('/:id', (req, res, next) => {
   Project.findById(req.params.id)
-    .then(project => {
-      res.json(project);
-    })
-    .catch(next);
+  .then(project => {
+    res.json(project);
+  })
+  .catch(next);
 });
 
 router.put('/', (req, res, next) => {
@@ -44,10 +44,10 @@ router.put('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   Project.create(req.body)
-    .then(createdProject => {
-      res.status(201).json(createdProject);
-    })
-    .catch(next);
+  .then(createdProject => {
+    res.status(201).json(createdProject);
+  })
+  .catch(next);
 });
 
 router.delete('/', (req, res, next) => {
